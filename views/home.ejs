@@ -1,0 +1,320 @@
+<%- include('partials/head') %> <%- include('partials/header') %>
+<style>
+  /* Example basic styling */
+
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+  @media (max-width: 768px) {
+    .carousel-inner img {
+      height: 400px; /* Reduced height for mobile devices */
+    }
+  }
+  /* NAVBAR */
+  .navbar {
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+    padding: 1rem;
+  }
+
+  .navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar-brand {
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+    font-size: 1.2rem;
+  }
+
+  .navbar-nav {
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar-nav li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: normal;
+  }
+
+  /* HERO SECTION */
+  .hero {
+    background: #333 url('https://via.placeholder.com/1800x600') no-repeat cover;
+    /* height: 100vh !important; */
+    width: 100%;
+    color: #fff;
+    padding: 0 0;
+    text-align: center;
+    margin-top: auto;
+  }
+
+  .hero-content {
+    /* max-width: 1000px;
+    max-height: 500px; */
+    margin: 0 auto;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+    margin: 1rem 0 2rem 0;
+  }
+
+  .btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+
+  /* SECTIONS */
+  .section {
+    padding: 3rem 1rem;
+  }
+
+  .section h2 {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  /* FOOTER */
+  .footer {
+    background-color: #f8f8f8;
+    border-top: 1px solid #ddd;
+    padding: 1rem 0;
+    text-align: right;
+  }
+
+  .hero {
+    /* width: 100%; */
+
+    /* height: auto;
+    /* Let the carousel images define the height */
+    overflow: hidden; /* Ensure no scrollbars if the carousel is sized differently */
+  }
+
+  .hero-overlay {
+    max-width: 700px;
+    padding: 1rem;
+    background-color: rgba(
+      0,
+      0,
+      0,
+      0.5
+    ); /* Semi-transparent black overlay if desired */
+    border-radius: 4px; /* Rounded corners, optional */
+  }
+
+  .carousel-inner img {
+    width: 100%; /* Ensures the image stretches to the container's width */
+    max-width: 100%; /* Prevents image from overflowing horizontally */
+    height: 800px; /* Fixed height for all images (adjust as needed) */
+    object-fit: cover; /* Crops the image to fill the fixed height without distorting */
+  }
+  @media (max-width: 300px) {
+    .carousel-inner img {
+      height: 400px; /* Reduced height for mobile devices */
+    }
+  }
+</style>
+<!-- Hero Section -->
+<!-- Hero Section with Carousel in the background -->
+<section class="hero position-relative">
+  <!-- Bootstrap Carousel -->
+  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+    <!-- Indicators (optional) -->
+    <div class="carousel-indicators">
+      <button
+        type="button"
+        data-bs-target="#heroCarousel"
+        data-bs-slide-to="0"
+        class="active"
+        aria-current="true"
+        aria-label="Slide 1"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#heroCarousel"
+        data-bs-slide-to="1"
+        aria-label="Slide 2"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#heroCarousel"
+        data-bs-slide-to="2"
+        aria-label="Slide 3"
+      ></button>
+    </div>
+
+    <!-- Carousel inner -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <!-- Add your own image source below -->
+        <img src="1.jpg" class="d-block w-100" alt="Slide 1" />
+      </div>
+      <div class="carousel-item">
+        <img src="2.jpg" class="d-block w-100" alt="Slide 2" />
+      </div>
+      <div class="carousel-item">
+        <img src="3.jpg" class="d-block w-100" alt="Slide 3" />
+      </div>
+    </div>
+
+    <!-- Controls (optional) -->
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#heroCarousel"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#heroCarousel"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <!-- Overlay Content -->
+  <div
+    class="hero-overlay position-absolute top-50 start-50 translate-middle text-center text-white"
+  >
+    <h1>
+      Welcome to <br />
+      Making New Decisions
+    </h1>
+    <p>Empowering you to take your business to new heights.</p>
+    <a href="#services" class="btn btn-primary">Learn More</a>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="section services">
+  <div class="container">
+    <h2>Services</h2>
+    <p class="text-center">
+      We provide expert guidance to help you make the best decisions for your
+      organization.
+    </p>
+
+    <div class="column">
+      <!-- Service 1 Card -->
+      <div class="">
+        <div class="card h-100">
+          <div class="card-header">Stress Analysis and Weight Optimization</div>
+          <div class="card-body">
+            <p class="card-text">
+              Initial Sizing, Stress Reports, Aircraft Finite Element Models,
+              and Detailed Hand Calculations. From initial study to
+              certification reports, we handle it all. Safe and light. We will
+              give the best, least expensive, and most balanced solution while
+              closely monitoring complexity and manufacturability.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 2 Card -->
+      <div class="">
+        <div class="card h-100">
+          <div class="card-header">Loads Analysis</div>
+          <div class="card-body">
+            <p class="card-text">
+              We offer a simple solution for loads engineering. Advanced
+              aircraft prototypes can withstand preliminary loads, while
+              conventional part 23 aircraft configurations can withstand
+              certification level loads. Our approach to aircraft design heavily
+              relies on our understanding of loads engineering.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 3 Card -->
+      <div class="">
+        <div class="card h-100">
+          <div class="card-header">Structures Design</div>
+          <div class="card-body">
+            <p class="card-text">
+              Sheet metal fabrications, advanced CNC machining, reliable welds,
+              and robust metallic and composite subassemblies. CAD production of
+              drawings or sub-assembly work to meet rigorous deadlines. We
+              understand what is important to you and ensure you reach your
+              goals.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 4 Card -->
+      <div class="">
+        <div class="card h-100">
+          <div class="card-header">Composite M&P, Design and Analysis</div>
+          <div class="card-body">
+            <p class="card-text">
+              Making New Decisions can play a major role in developing numerous
+              composite aircraft. Our methodologies ensure optimal results for
+              emerging and established programs. From the initial layout to
+              first flight, we have taken several composite aircraft ideas.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Resources Section -->
+
+<!-- About Section -->
+<section id="about" class="section about">
+  <div class="container">
+    <h2>About Us</h2>
+    <p>
+      Our mission is to help individuals and organizations make better,
+      data-driven decisions through expert guidance and innovative solutions. We
+      Our mission is to help individuals and organizations make better,
+      data-driven decisions through expert guidance and innovative solutions. We
+      are committed to delivering precise, efficient, and impactful services
+      that empower our clients to thrive in highly competitive environments. Our
+      leadership is spearheaded by
+      <a target="_blank" href="https://www.linkedin.com/in/manju-s-2a379214/"
+        >Dr. S. Manju
+      </a>
+      , a distinguished Chief Scientist (retired from CSIR–NAL) who has
+      contributed significantly to India’s aerospace advancements. With
+      extensive hands-on experience in landmark projects such as the **LCA
+      Tejas** and **Saras** programs, Dr. Manju S brings unparalleled expertise
+      in research, development, and engineering. Under her guidance, our team
+      merges cutting-edge knowledge with real-world application, ensuring every
+      project benefits from proven methodologies and forward-thinking
+      strategies. By combining a deep understanding of industry demands with a
+      passion for innovation, we continually strive to offer our clients
+      solutions that are both visionary and grounded in practical know-how. Our
+      ultimate goal is to become a trusted partner for those seeking data-backed
+      decisions and high-impact results.
+    </p>
+    <!-- Team info, company background, etc. -->
+  </div>
+</section>
+
+<!-- Contact Section -->
+<%- include('partials/footer') %>
